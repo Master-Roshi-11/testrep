@@ -1,0 +1,28 @@
+# Project: TestSQLConn
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o
+LINKOBJ  = main.o
+LIBS     = -L"C:/MinGW_GCC 11.2.0/MinGW/lib""" -L"""C:/MinGW_GCC 11.2.0/MinGW/x86_64-w64-mingw32/lib" -static-libstdc++ -static-libgcc -L"C:/Program Files/MySQL/MySQL Connector C++ 8.1/include/jdbc/cppconn" -L"C:/Program Files/MySQL/MySQL Connector C++ 8.1/include/jdbc" -L"C:/Program Files/MySQL/MySQL Connector C++ 8.1/lib64" -L"C:/Program Files/MySQL/MySQL Connector C++ 8.1/lib64/plugin" -L"C:/Program Files/MySQL/MySQL Connector C++ 8.1/lib64/vs14"
+INCS     = -I"C:/MinGW_GCC 11.2.0/MinGW/include""" -I"""C:/MinGW_GCC 11.2.0/MinGW/x86_64-w64-mingw32/include""" -I"""C:/MinGW_GCC 11.2.0/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0/include" -I"C:/Program Files/MySQL/MySQL Connector C++ 8.1/include/jdbc/cppconn" -I"C:/Program Files/MySQL/MySQL Connector C++ 8.1/include/jdbc"
+CXXINCS  = -I"C:/MinGW_GCC 11.2.0/MinGW/include""" -I"""C:/MinGW_GCC 11.2.0/MinGW/x86_64-w64-mingw32/include""" -I"""C:/MinGW_GCC 11.2.0/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0/include" -I"C:/Program Files/MySQL/MySQL Connector C++ 8.1/include/jdbc/cppconn" -I"C:/Program Files/MySQL/MySQL Connector C++ 8.1/include/jdbc"
+BIN      = TestSQLConn.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11
+CFLAGS   = $(INCS) -std=gnu++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
